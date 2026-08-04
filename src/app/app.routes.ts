@@ -12,7 +12,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 
 import { ListaContatosComponent } from './pages/contato/lista-contatos/lista-contatos.component';
-import { AdicionarContatoComponent } from './pages/contato/adicionar-contato/adicionar-contato.component'
+import { AdicionarContatoComponent } from './pages/contato/adicionar-contato/adicionar-contato.component';
+import { PerfilContatoComponent } from './pages/contato/perfil-contato/perfil-contato.component';
 
 export const routes: Routes = [
   {
@@ -24,6 +25,10 @@ export const routes: Routes = [
     path: 'adicionar-contato',
     component: AdicionarContatoComponent,
     canActivate: [AuthGuardService],
+  },
+  {
+    path: 'perfil-contato/id',
+    component: PerfilContatoComponent
   },
   {
     path: 'tasks',
