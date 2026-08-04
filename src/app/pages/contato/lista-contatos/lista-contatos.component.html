@@ -1,0 +1,48 @@
+<h2>Lista Contatos</h2>
+
+<section class="cabecalho">
+  <div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <!-- Container do Cabecalho -->
+      <app-cabecalho></app-cabecalho>
+
+      <!-- Adicionar Contato -->
+      <section class="adicionar-contato">
+        <dx-button
+        text="Novo contato"
+        icon="plus"
+        type="default"
+        stylingMode="contained"
+        routerLink="/adicionar-contato"
+        ></dx-button>
+      </section>
+
+      <!-- Filtro Contato -->
+      <section class="search">
+        <dx-text-box
+          class="inputSearch"
+          placeholder="Digite para buscar..."
+          ></dx-text-box>
+      </section>
+
+      <!-- Iteração de letras alfabeto -->
+       @for (letra of alfabeto; track letra) {
+         <app-separador>
+          {{ letra }}
+         </app-separador>
+         @for (contato of filtrarContatosPorLetraInicial(letra); track contato.id) {
+          <app-contato
+          [nome]="contato.nome"
+          [telefone]="contato.telefone"
+          [id]="contato.id!">
+          </app-contato>
+         }
+       }
+
+      <!-- Inserir o conteúdo aqui se não a lista ficará fora do container principal da página -->
+
+    </div>
+  </div>
+</section>
+
+

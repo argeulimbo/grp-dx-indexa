@@ -1,0 +1,127 @@
+<!-- Título do Documento -->
+<h2>Novo contato</h2>
+
+<!-- Container Principal -->
+<div class="content-block">
+  <div class="dx-card responsive-paddings">
+
+    <!-- Cabecalho && Button Voltar-->
+    <section class="cabecalho-link">
+      <div>
+        <dx-button
+          icon="arrowleft"
+          text="Voltar"
+          routerLink="/lista-contatos">
+        </dx-button>
+      </div>
+    </section>
+
+    <!-- Contato e Button Adicionar -->
+    <section class="cabecalho-contato">
+      <div class="cabecalho-contato">
+        <img src="/assets/adicionar-contato.png" alt="Adicionar">
+        <h1>Adicionar contato</h1>
+      </div>
+    </section>
+
+    <!-- Form Binding -->
+    <form [formGroup]="contatoForm" (ngSubmit)="salvarContato()">
+
+      <div class="dx-fieldset">
+
+        <!-- Campo: Nome -->
+        <div class="dx-field">
+          <div class="dx-field-label">Nome</div>
+          <div class="dx-field-value">
+            <dx-text-box
+            formControlName="nome"
+            placeholder="Digite o nome"
+            ></dx-text-box>
+          </div>
+        </div>
+
+        <!-- Campo: Telefone -->
+        <div class="dx-field">
+          <div class="dx-field-label">Telefone</div>
+          <div class="dx-field-value">
+            <!-- Dica DevExtreme: Use a propriedade mask para formatar o telefone! -->
+            <dx-text-box
+            formControlName="telefone"
+            mask="(00) 00000-0000"
+            placeholder="Digite o telefone"
+            ></dx-text-box>
+          </div>
+        </div>
+
+        <!-- Campo: E-mail -->
+        <div class="dx-field">
+          <div class="dx-field-label">E-mail</div>
+          <div class="dx-field-value">
+            <dx-text-box
+            formControlName="email"
+            placeholder="Digite o e-mail"
+            ></dx-text-box>
+          </div>
+        </div>
+
+        <!-- Campo: Aniversário -->
+        <div class="dx-field">
+          <div class="dx-field-label">Aniversário</div>
+          <div class="dx-field-value">
+            <dx-date-box
+            formControlName="aniversario"
+            displayFormat="dd/MM/yyyy"
+            ></dx-date-box>
+          </div>
+        </div>
+
+        <!-- Container Redes Sociais -->
+        <div class="dx-field">
+          <div class="dx-field-label">Redes Sociais</div>
+          <div class="dx-field-value">
+            <dx-text-box
+            formControlName="redes"
+            placeholder="http:// (Adicione a URL)"
+            ></dx-text-box>
+          </div>
+        </div>
+
+        <!-- Campo: Observacoes -->
+        <div class="dx-field">
+          <div class="dx-field-label">Observações</div>
+          <div class="dx-field-value">
+            <dx-text-area
+              formControlName="observacoes"
+              [maxLength]="500"
+              [height]="90">
+            </dx-text-area>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Section Para Buttons -->
+      <section class="botoes" style="display: flex; gap: 10px; margin-top: 20px;">
+        <dx-button
+          class="bt-cancelar"
+          type="danger"
+          text="Cancelar"
+          (onClick)="cancelar()"
+          icon="close">
+        </dx-button>
+
+        <dx-button
+          class="bt-salvar"
+          type="default"
+          text="Salvar"
+          (onClick)="salvarContato()"
+          [useSubmitBehavior]="true"
+          [disabled]="contatoForm.invalid"
+          icon="check">
+        </dx-button>
+      </section>
+
+    </form>
+
+  </div>
+</div>

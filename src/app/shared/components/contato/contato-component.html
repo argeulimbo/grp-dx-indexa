@@ -1,0 +1,16 @@
+<section class="contato">
+  <ul>
+
+    <li>
+      <strong>{{ nome }}</strong>
+    </li>
+    <li>{{ telefone }}</li>
+    <li>
+      <!-- Dx Button para EDITAR-->
+      <dx-button
+      icon="edit"
+      [routerLink]="['/formulario', id]"
+      ></dx-button>
+    </li>
+  </ul>
+</section>
