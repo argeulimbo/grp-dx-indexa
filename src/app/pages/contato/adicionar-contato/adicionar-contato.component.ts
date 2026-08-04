@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
-import { Separador } from '../../../shared/components/separador/separador';
-
 import { ContatoService } from '../../../shared/services/contato';
 
 import { DxButtonComponent, DxDateBoxComponent, DxTextAreaComponent, DxTextBoxComponent } from 'devextreme-angular';

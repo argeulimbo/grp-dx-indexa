@@ -27,8 +27,14 @@ export const routes: Routes = [
     canActivate: [AuthGuardService],
   },
   {
-    path: 'perfil-contato/id',
-    component: PerfilContatoComponent
+    path: 'adicionar-contato/:id',
+    component: AdicionarContatoComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'perfil-contato/:id',
+    component: PerfilContatoComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'tasks',
