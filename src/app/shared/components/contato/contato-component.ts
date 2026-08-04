@@ -12,7 +12,7 @@ import { DxButtonComponent } from 'devextreme-angular';
   templateUrl: './contato-component.html',
   styleUrl: './contato-component.scss',
 })
-export class Contato {
+export class ContatoComponent {
   @Input() nome: string = '';
   @Input() telefone: string = '';
   @Input() id?: number;
