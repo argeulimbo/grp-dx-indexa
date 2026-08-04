@@ -32,7 +32,7 @@ export class ContatoService {
   }
 
   editarContato(contato: Contato): Observable<Contato> {
-    const url = `${this.API}/${contato.id}}`;
+    const url = `${this.API}/${contato.id}`;
     return this.http.put<Contato>(url, contato);
   }
 

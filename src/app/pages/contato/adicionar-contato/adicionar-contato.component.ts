@@ -62,7 +62,14 @@ export class AdicionarContatoComponent implements OnInit {
   salvarContato() {
     const novoContato = this.contatoForm.value;
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    novoContato.id = id ? parseInt(id) : null;
+
+    if (id) {
+      novoContato.id = parseInt(id);
+    }
+    else {
+      delete novoContato.id;
+    }
+
     this.contatoService.editarOuSalvarContato(novoContato).subscribe(() => {
       this.contatoForm.reset();
       this.router.navigateByUrl('/lista-contatos');
@@ -70,7 +77,7 @@ export class AdicionarContatoComponent implements OnInit {
   }
 
   cancelar() {
-    this.contatoForm.reset();    
+    this.contatoForm.reset();
   }
 
 }

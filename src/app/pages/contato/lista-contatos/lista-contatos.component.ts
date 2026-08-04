@@ -59,11 +59,12 @@ export class ListaContatosComponent implements OnInit {
 
   valueChanged(data: DxTextBoxTypes.ValueChangedEvent) {
     this.emailValue = `${data.value.replace(/\s/g, '').toLowerCase()}@corp.com`;
-  } 
+  }
 
 
   filtrarContatosPorLetraInicial(letra: string): Contato[] {
     return this.filtrarContatosPorTexto().filter( contato => {
+      if (!contato.nome) return false;
       return contato.nome.toLowerCase().startsWith(letra)
     })
   }
