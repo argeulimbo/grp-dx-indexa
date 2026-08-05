@@ -1,1 +1,57 @@
-<p>perfil-contato works!</p>
+<!-- Container Principal -->
+<div class="content-block">
+
+  <!-- Cabecalho e Bt Voltar -->
+  <section class="cabecalho-link">
+    <div class="dx-card responsive-paddings">
+    <img src="/assets/logo.png">
+      <dx-button
+      icon="arrow-left"
+      text="Voltar"
+      routerLink="/lista-contatos"
+      ></dx-button>
+    </div>
+  </section>
+
+  <section class="cabecalho-contato">
+    <img src="/assets/perfil-contato.png">
+    <h1>Perfil do Contato</h1>
+  </section>
+  <!-- Fim do Cabecalho -->
+
+  <!-- Perfil Card -->
+  <section class="perfil">
+    <ul>
+      <li>
+        <i class="material-icons">phone</i>
+        <strong>Telefone</strong>
+      </li>
+      <li>{{ contato.telefone }}</li>
+      <li>
+        <i class="material-icons">mail</i>
+        <strong>Email</strong>
+      </li>
+      <li>{{ contato.email }}</li>
+      <li>
+        <i class="material-icons">calendar_month</i>
+        <strong>Data de nascimento</strong>
+      </li>
+      <li>{{ contato.aniversario }}</li>
+      <li>
+        <i class="material-icons">language</i>
+        <strong>Redes sociais</strong>
+      </li>
+      <li>{{ contato.redes }}</li>
+    </ul>
+
+    <!-- Buttons -->
+     <div class="botoes">
+      <dx-button
+      (click)="excluir()"
+      text="Excluir Contato"
+      ></dx-button>
+     </div>
+  </section>
+
+
+</div>

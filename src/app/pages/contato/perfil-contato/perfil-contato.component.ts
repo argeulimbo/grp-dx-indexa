@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Contato } from '../../../shared/components/contato/contato';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { ContatoService } from '../../../shared/services/contato';
+
 import { DxButtonComponent } from 'devextreme-angular';
+
+import { ContatoService } from '../../../shared/services/contato';
+import { Contato } from '../../../shared/components/contato/contato';
 import { Cabecalho } from '../../../shared/components/cabecalho/cabecalho';
 
 @Component({
   selector: 'app-perfil-contato',
   imports: [
-    RouterLink,
     DxButtonComponent,
-    Cabecalho
-  ],
+    RouterLink],
   templateUrl: './perfil-contato.component.html',
   styleUrl: './perfil-contato.component.scss',
 })
