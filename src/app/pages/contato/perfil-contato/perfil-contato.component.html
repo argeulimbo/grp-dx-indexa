@@ -1,16 +1,15 @@
 <!-- Container Principal -->
-<div class="content-block">
+<div class="content-block dx-card responsive-paddings">
 
   <!-- Cabecalho e Bt Voltar -->
-  <section class="cabecalho-link">
-    <div class="dx-card responsive-paddings">
+  <section class="cabecalho-link" id="cabecalho-link">
     <img src="/assets/logo.png">
       <dx-button
-      icon="arrow-left"
+      class="seta"
+      icon="arrowleft"
       text="Voltar"
       routerLink="/lista-contatos"
       ></dx-button>
-    </div>
   </section>
 
   <section class="cabecalho-contato">
@@ -23,22 +22,28 @@
   <section class="perfil">
     <ul>
       <li>
-        <i class="material-icons">phone</i>
+        <span class="dx-icon-card"></span>
+        <strong>Nome</strong>
+      </li>
+      <li>{{ contato.nome }}</li>
+
+      <li>
+        <span class="dx-icon-tel"></span>
         <strong>Telefone</strong>
       </li>
       <li>{{ contato.telefone }}</li>
       <li>
-        <i class="material-icons">mail</i>
+        <span class="dx-icon-email"></span>
         <strong>Email</strong>
       </li>
       <li>{{ contato.email }}</li>
       <li>
-        <i class="material-icons">calendar_month</i>
+        <span class="dx-icon-event"></span>
         <strong>Data de nascimento</strong>
       </li>
       <li>{{ contato.aniversario }}</li>
       <li>
-        <i class="material-icons">language</i>
+        <span class="dx-icon-mention"></span>
         <strong>Redes sociais</strong>
       </li>
       <li>{{ contato.redes }}</li>
@@ -47,6 +52,7 @@
     <!-- Buttons -->
      <div class="botoes">
       <dx-button
+      class="botao-excluir"
       (click)="excluir()"
       text="Excluir Contato"
       ></dx-button>

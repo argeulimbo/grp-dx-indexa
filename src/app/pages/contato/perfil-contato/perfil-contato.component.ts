@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 import { DxButtonComponent } from 'devextreme-angular';
@@ -29,7 +29,8 @@ export class PerfilContatoComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private contatoService: ContatoService,
-    private router: Router
+    private router: Router,
+    private changeDetectorRef: ChangeDetectorRef
   ) { }
 
   ngOnInit()  {
@@ -37,6 +38,7 @@ export class PerfilContatoComponent implements OnInit {
     if (id) {
       this.contatoService.buscarPorId(parseInt(id)).subscribe((contato) => {
         this.contato = contato;
+        this.changeDetectorRef.detectChanges();
       })
     }
   }

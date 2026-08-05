@@ -1,13 +1,3 @@
 {
-  "contatos": [
-    {
-      "nome": "Keila Keilinha",
-      "telefone": "31999999",
-      "email": "keilinha@gmail.com",
-      "aniversario": "2018-06-05",
-      "redes": "insta.com",
-      "observacoes": "aaaa",
-      "id": 1
-    }
-  ]
+  "contatos": []
 }
